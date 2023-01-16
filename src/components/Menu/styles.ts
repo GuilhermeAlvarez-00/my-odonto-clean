@@ -5,6 +5,7 @@ export const Container = styled.header`
   height: 5rem;
   padding-inline: 1rem;
   box-shadow: 0px 10px 25px rgba(55, 121, 215, 0.25);
+  position: relative;
 `;
 
 export const Wrapper = styled.div`
@@ -45,10 +46,40 @@ export const Nav = styled.nav`
   .nav__link {
     font-size: 1.25rem;
     color: var(--blue-800);
+    transition: color 0.2s;
 
     &.active {
       color: var(--blue-500);
       font-weight: 700;
+    }
+
+    &:hover {
+      color: var(--blue-500);
+    }
+  }
+
+  @media (max-width: 948px) {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -100vh;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--blue-200);
+    z-index: 999;
+    padding-top: 2rem;
+    opacity: 0;
+    transition: 0.2s;
+
+    .nav__link {
+      font-size: 1.125rem;
+    }
+
+    &.active {
+      top: 5rem;
+      opacity: 1;
+      height: calc(100vh - 5rem);
     }
   }
 `;
@@ -56,6 +87,7 @@ export const Nav = styled.nav`
 export const NavActionButton = styled.div`
   padding-left: 1.375rem;
   position: relative;
+
   button {
     &::after {
       content: '';
@@ -66,5 +98,34 @@ export const NavActionButton = styled.div`
       width: 0;
       border: 1px solid rgba(2, 14, 31, 0.36);
     }
+  }
+
+  @media (max-width: 948px) {
+    padding-left: 0;
+    button {
+      &::after {
+        width: 100%;
+        height: 0;
+        top: -0.75rem;
+      }
+    }
+  }
+`;
+
+export const MobileMenuButton = styled.div`
+  display: none;
+  width: 1.875rem;
+  height: 1.875rem;
+  background: var(--blue-700);
+  cursor: pointer;
+
+  @media (max-width: 948px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.1875rem;
+    color: var(--blue-500);
   }
 `;

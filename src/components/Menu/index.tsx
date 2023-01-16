@@ -1,4 +1,5 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 import { links } from './links';
 import { ActionButton } from '../ActionButton';
@@ -9,6 +10,12 @@ import calendarIcon from '../../assets/icons/white-calendar.png';
 import * as S from './styles';
 
 export const Menu: FC = () => {
+  const [isMenuActive, setIsMenuActive] = useState(false);
+
+  const handleToggleMobileMenu = () => {
+    setIsMenuActive((prevState) => !prevState);
+  };
+
   return (
     <S.Container>
       <S.Wrapper>
@@ -24,7 +31,7 @@ export const Menu: FC = () => {
           </p>
         </S.Logo>
 
-        <S.Nav>
+        <S.Nav className={`${isMenuActive ? 'active' : null}`}>
           {links.map((link, index) => (
             <a
               key={link.path}
@@ -38,6 +45,10 @@ export const Menu: FC = () => {
             <ActionButton icon={calendarIcon}>Agendar</ActionButton>
           </S.NavActionButton>
         </S.Nav>
+
+        <S.MobileMenuButton onClick={handleToggleMobileMenu}>
+          <GiHamburgerMenu />
+        </S.MobileMenuButton>
       </S.Wrapper>
     </S.Container>
   );
