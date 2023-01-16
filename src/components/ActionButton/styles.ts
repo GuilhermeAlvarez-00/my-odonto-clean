@@ -11,4 +11,8 @@ export const Container = styled.button`
   border-radius: 0.1875rem;
   font-size: 1.125rem;
   color: white;
+
+  @media (max-width: 948px) {
+    font-size: 0.9375rem;
+  }
 `;
