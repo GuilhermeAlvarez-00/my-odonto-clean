@@ -14,7 +14,8 @@ export const GlobalStyles = createGlobalStyle`
     --blue-300: #DAE9F2;
     --blue-400: #2098E3;
     --blue-500: #0C63DF;
-    --blue-750: rgba(2, 14, 31, 0.69);;
+    --blue-700: rgba(12, 99, 223, 0.15);
+    --blue-750: rgba(2, 14, 31, 0.69);
     --blue-800: rgba(2, 14, 31, 0.85);
     --blue-gradient: linear-gradient(225deg, #2098E3 0%, #0C63DF 100%);
   }
