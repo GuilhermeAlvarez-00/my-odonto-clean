@@ -1,12 +1,14 @@
-import React from 'react';
+import { FC } from 'react';
 
 import { links } from './links';
+import { ActionButton } from '../ActionButton';
 
 import logoImg from '../../assets/images/logo.png';
+import calendarIcon from '../../assets/icons/white-calendar.png';
 
 import * as S from './styles';
 
-export const Menu: React.FC = () => {
+export const Menu: FC = () => {
   return (
     <S.Container>
       <S.Wrapper>
@@ -17,18 +19,25 @@ export const Menu: React.FC = () => {
             className="logo"
           />
           <p className="logo__title">
-            Odonto Clean
-            <p className="logo__subtitle">Clínica odontológica</p>
+            Odonto Clean <br />
+            <span className="logo__subtitle">Clínica odontológica</span>
           </p>
         </S.Logo>
 
         <S.Nav>
-          {links.map((link) => (
-            <a href={link.path}>{link.label}</a>
+          {links.map((link, index) => (
+            <a
+              key={link.path}
+              className={`${index === 0 ? 'nav__link active' : 'nav__link'}`}
+              href={link.path}
+            >
+              {link.label}
+            </a>
           ))}
+          <S.NavActionButton>
+            <ActionButton icon={calendarIcon}>Agendar</ActionButton>
+          </S.NavActionButton>
         </S.Nav>
-
-        <S.ButtonEvent></S.ButtonEvent>
       </S.Wrapper>
     </S.Container>
   );

@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `;
 
 export const Logo = styled.div`
@@ -28,13 +29,42 @@ export const Logo = styled.div`
     font-size: 1.0625rem;
     font-weight: 700;
 
-    p.logo__subtitle {
+    span.logo__subtitle {
       font-size: 0.8125rem;
       font-weight: 400;
     }
   }
 `;
 
-export const Nav = styled.nav``;
+export const Nav = styled.nav`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.875rem;
 
-export const ButtonEvent = styled.div``;
+  .nav__link {
+    font-size: 1.25rem;
+    color: var(--blue-800);
+
+    &.active {
+      color: var(--blue-500);
+      font-weight: 700;
+    }
+  }
+`;
+
+export const NavActionButton = styled.div`
+  padding-left: 1.375rem;
+  position: relative;
+  button {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      border: 1px solid rgba(2, 14, 31, 0.36);
+    }
+  }
+`;
