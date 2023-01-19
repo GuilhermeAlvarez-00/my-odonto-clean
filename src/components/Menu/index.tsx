@@ -8,6 +8,7 @@ import logoImg from '../../assets/images/logo.png';
 import calendarIcon from '../../assets/icons/white-calendar.png';
 
 import * as S from './styles';
+import { Link } from 'react-router-dom';
 
 export const Menu: FC = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
@@ -33,16 +34,18 @@ export const Menu: FC = () => {
 
         <S.Nav className={`${isMenuActive ? 'active' : null}`}>
           {links.map((link, index) => (
-            <a
+            <Link
               key={link.path}
               className={`${index === 0 ? 'nav__link active' : 'nav__link'}`}
-              href={link.path}
+              to={`${link.path}`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <S.NavActionButton>
-            <ActionButton icon={calendarIcon}>Agendar</ActionButton>
+            <ActionButton themeColor="blue" icon={calendarIcon}>
+              Agendar
+            </ActionButton>
           </S.NavActionButton>
         </S.Nav>
 

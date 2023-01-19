@@ -17,6 +17,10 @@ export const links = [
   },
   {
     label: 'Dúvidas',
-    path: '/dúvidas',
+    path: '/duvidas',
   },
+  // {
+  //   label: 'Design System',
+  //   path: '/design-system',
+  // },
 ];
