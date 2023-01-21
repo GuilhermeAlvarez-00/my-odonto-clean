@@ -9,6 +9,7 @@ export const Container = styled.section`
   background-repeat: no-repeat;
   background-size: 50% 100%;
   background-position: right;
+  position: relative;
 `;
 
 export const Wrapper = styled.div`
@@ -44,4 +45,28 @@ export const ButtonWrapper = styled.div`
   display: flex;
   gap: 0.625rem;
   margin-top: 2.1875rem;
+`;
+
+export const FloatCard = styled.aside`
+  background-color: white;
+  position: absolute;
+  bottom: 4.8125rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.75rem 1.5rem;
+  border-radius: 1.875rem 0.3125rem 0.3125rem 0.3125rem;
+  box-shadow: 0px 10px 25px rgba(55, 121, 215, 0.25);
+
+  p {
+    font-size: 1rem;
+
+    &:first-child {
+      color: var(--blue-750);
+    }
+
+    &:last-child {
+      color: var(--blue-800);
+      font-weight: 600;
+    }
+  }
 `;

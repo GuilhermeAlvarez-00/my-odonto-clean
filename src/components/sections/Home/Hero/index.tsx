@@ -24,6 +24,11 @@ export const Hero: FC = () => {
           <ActionButton themeColor="light">Entre em contato</ActionButton>
         </S.ButtonWrapper>
       </S.Wrapper>
+
+      <S.FloatCard>
+        <p>Entre em contato</p>
+        <p>(61) 95682.5324</p>
+      </S.FloatCard>
     </S.Container>
   );
 };
