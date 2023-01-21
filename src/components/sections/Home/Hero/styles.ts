@@ -10,6 +10,17 @@ export const Container = styled.section`
   background-size: 50% 100%;
   background-position: right;
   position: relative;
+
+  @media (max-width: 948px) {
+    height: calc(33.25rem - 5rem);
+    background-size: 100% 12.5rem;
+    background-position: top;
+    padding-inline: 1rem;
+  }
+
+  @media (max-width: 392px) {
+    height: auto;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -20,6 +31,10 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: left;
   justify-content: center;
+
+  @media (max-width: 948px) {
+    padding-block: 14.625rem 2.75rem;
+  }
 `;
 
 export const Text = styled.div`
@@ -29,7 +44,7 @@ export const Text = styled.div`
   }
 
   h1 {
-    font-size: 2.1875rem;
+    font-size: clamp(2.1875rem, 5vw, 2.75rem);
     margin-top: 0.5rem;
 
     .hero__highlight {
@@ -45,6 +60,10 @@ export const ButtonWrapper = styled.div`
   display: flex;
   gap: 0.625rem;
   margin-top: 2.1875rem;
+
+  @media (max-width: 392px) {
+    flex-direction: column;
+  }
 `;
 
 export const FloatCard = styled.aside`
@@ -68,5 +87,9 @@ export const FloatCard = styled.aside`
       color: var(--blue-800);
       font-weight: 600;
     }
+  }
+
+  @media (max-width: 948px) {
+    display: none;
   }
 `;
