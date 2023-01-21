@@ -7,8 +7,8 @@ export const Container = styled.section`
   background: var(--blue-300);
   background-image: url('../../../src/assets/images/home-header.png');
   background-repeat: no-repeat;
-  background-size: 50% 100%;
-  background-position: right;
+  background-size: 80% 100%;
+  background-position: 50vw;
   position: relative;
 
   @media (max-width: 948px) {
@@ -44,6 +44,7 @@ export const Text = styled.div`
   }
 
   h1 {
+    width: min(100%, 25rem);
     font-size: clamp(2.1875rem, 5vw, 2.75rem);
     margin-top: 0.5rem;
 

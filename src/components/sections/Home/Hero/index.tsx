@@ -12,8 +12,7 @@ export const Hero: FC = () => {
         <S.Text>
           <span className="hero__subtitle">20 Anos de experiência</span>
           <h1>
-            Realizando sonhos de <br />
-            um
+            Realizando sonhos de um
             <span className="hero__highlight">Sorriso Perfeito!</span>
           </h1>
         </S.Text>
